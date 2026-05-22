@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FREE FALL</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&family=DM+Serif+Display&display=swap" 
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- =========================
+       LANDING PAGE
+  ========================== -->
+  <section id="landing-page" class="page landing-page active">
+    <div class="landing-overlay">
+<h1 class="main-title">FREE FALL</h1>
+<p class="subtitle">How crisis-ready are you?</p>
+<button id="start-btn" class="primary-btn">
+  Are you ready?
+</button>
+    </div>
+  </section>
+
+  <!-- =========================
+       CASE SELECTION PAGE
+  ========================== -->
+  <section id="case-page" class="page case-page">
+    <div class="case-wrapper">
+      <h2 class="page-title">Choose your crisis</h2>
+
+      <div class="case-grid">
+        <!-- Case 1: playable -->
+        <div class="case-card playable" data-case="golden-roof">
+          <img src="asset/game1-cover.jpg" alt="The Hollow Boom" />
+
+          <div class="case-info">
+            <div class="case-meta">
+              <span>⏱ 20 mins</span>
+              <span>▮▮▮ Hard</span>
+            </div>
+
+            <h3>The Hollow Boom</h3>
+
+            <p>
+              You are an analyst in a booming credit market. Prices rise,
+              clients push for returns, and risk looks safely engineered away —
+              until liquidity disappears.
+            </p>
+
+            <button class="case-btn">Play this case</button>
+          </div>
+        </div>
+
+        <!-- Case 2: locked -->
+        <div class="case-card locked">
+          <img src="asset/game2-cover.jpg" alt="The Glitter Trap" />
+
+          <div class="case-info">
+            <div class="case-meta">
+              <span>⏱ 10 mins</span>
+              <span>▮ Easy</span>
+            </div>
+
+            <h3>The Glitter Trap</h3>
+
+            <p>
+              A high-hype market where prices rise faster than fundamentals.
+              Coming soon.
+            </p>
+
+            <button class="case-btn disabled">Coming soon</button>
+          </div>
+        </div>
+
+        <!-- Case 3: locked -->
+        <div class="case-card locked">
+          <img src="asset/game3-cover.jpg" alt="The Silent Stop" />
+
+          <div class="case-info">
+            <div class="case-meta">
+              <span>⏱ 15 mins</span>
+              <span>▮▮ Medium</span>
+            </div>
+
+            <h3>The Silent Stop</h3>
+
+            <p>
+              A sudden external shock freezes normal activity.
+              Coming soon.
+            </p>
+
+            <button class="case-btn disabled">Coming soon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       GAME PAGE
+  ========================== -->
+  <section id="game-page" class="page game-page">
+    <div class="game-layout">
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+        <button class="side-btn" data-tab="news">
+          <span class="notification-dot"></span>
+          <span class="side-icon">📰</span>
+          <small>News</small>
+        </button>
+
+        <button class="side-btn" data-tab="social">
+          <span class="notification-dot"></span>
+          <span class="side-icon">𝕏</span>
+          <small>Social</small>
+        </button>
+
+        <button class="side-btn" data-tab="email">
+          <span class="notification-dot"></span>
+          <span class="side-icon">✉️</span>
+          <small>Gmail</small>
+        </button>
+
+        <button class="side-btn" data-tab="chat">
+          <span class="notification-dot"></span>
+          <span class="side-icon">💬</span>
+          <small>Chat</small>
+        </button>
+
+        <button class="side-btn" data-tab="file">
+          <span class="notification-dot"></span>
+          <span class="side-icon">📁</span>
+          <small>Files</small>
+        </button>
+
+        <button class="side-btn decision-side-btn" data-tab="decision">
+          <span class="notification-dot"></span>
+          <span class="side-icon">⚖️</span>
+          <small>Decision</small>
+        </button>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-panel">
+        <div id="content-box" class="content-box"></div>
+      </main>
+
+      <!-- RIGHT PANEL -->
+      <aside class="right-panel">
+        <!-- Status + market data -->
+        <div class="status-card">
+          <div class="phase-line">
+            <span id="phase-label">Phase 1/6</span>
+            <span id="progress-percent">17%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+
+          <div class="portfolio-mini-card">
+            <small>Portfolio</small>
+            <strong id="portfolio-value">$100,000</strong>
+          </div>
+
+          <div id="market-data-grid" class="market-data-grid"></div>
+
+          <div id="arrival-card" class="arrival-card"></div>
+          <div id="last-outcome" class="last-outcome"></div>
+        </div>
+
+        <!-- Allocation -->
+        <div class="allocation-card">
+          <h3>Current Allocation</h3>
+          <div id="allocation-list" class="allocation-list"></div>
+        </div>
+
+        <!-- Task list -->
+        <div class="task-card">
+          <h3>Incoming Information</h3>
+          <ul id="task-list"></ul>
+        </div>
+
+        <!-- Continue button -->
+        <button id="next-phase-btn" class="primary-btn next-btn">
+          Confirm & Continue
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================
+       RESULT PAGE
+  ========================== -->
+  <section id="result-page" class="page result-page">
+    <div class="result-box">
+      <h2>Your Result</h2>
+      <h1 id="result-title">Balanced Survivor</h1>
+
+      <div class="result-stats">
+        <div>
+          <small>Final Portfolio</small>
+          <strong id="final-portfolio">$100,000</strong>
+        </div>
+
+        <div>
+          <small>TXS Revealed</small>
+          <strong id="final-risk">0/100</strong>
+        </div>
+
+        <div>
+          <small>Crisis Readiness</small>
+          <strong id="final-score">70/100</strong>
+        </div>
+
+        <div>
+          <small>Liquidity</small>
+          <strong id="final-liquidity">70/100</strong>
+        </div>
+
+        <div>
+          <small>Research Depth</small>
+          <strong id="final-info-depth">0%</strong>
+        </div>
+
+        <div>
+          <small>Risk Discipline</small>
+          <strong id="final-independence">0%</strong>
+        </div>
+      </div>
+
+      <p id="result-description"></p>
+
+      <div id="decision-replay" class="decision-replay"></div>
+
+      <button id="restart-btn" class="primary-btn">Play Again</button>
+    </div>
+  </section>
+
+  <!-- =========================
+       PDF MODAL
+       Required for Files popup
+  ========================== -->
+  <div id="pdf-modal" class="pdf-modal">
+    <div class="pdf-modal-dialog">
+      <div class="pdf-modal-header">
+        <strong id="pdf-modal-title">Document Preview</strong>
+        <button id="pdf-modal-close" class="pdf-modal-close">✕</button>
+      </div>
+
+      <div id="pdf-modal-body" class="pdf-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
